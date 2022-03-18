@@ -1,7 +1,11 @@
 <?php
 
-namespace kbitAddons\payment\payment;
-
+namespace kbitAddons\payment;
+/**
+ * 接口类
+ *
+ * @author 617 <email：723875993@qq.com>
+ */
 interface PayMentInterFace
 {
     /**

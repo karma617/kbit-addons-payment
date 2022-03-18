@@ -1,6 +1,6 @@
 <?php
 
-namespace kbitAddons\payment\payment;
+namespace kbitAddons\payment;
 
 use Exception;
 

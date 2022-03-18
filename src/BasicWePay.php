@@ -1,5 +1,5 @@
 <?php
-namespace kbitAddons\payment\payment;
+namespace kbitAddons\payment;
 
 use Exception;
 
@@ -12,13 +12,13 @@ class BasicWePay
 {
     /**
      * 商户配置
-     * @var DataArray
+     * @var array
      */
     protected $config;
 
     /**
      * 当前请求数据
-     * @var DataArray
+     * @var array
      */
     protected $params;
 
@@ -107,7 +107,7 @@ class BasicWePay
         $option["appId"] = $this->config['appid'];
         $option["timeStamp"] = (string)time();
         $option["nonceStr"] = $this->createNoncestr();
-        $option["package"] = "prepay_id={$prepayId}";
+        $option["package"] = "prepay_id=" . $prepayId[0];
         $option["signType"] = "MD5";
         $option["paySign"] = $this->getPaySign($option, 'MD5');
         $option['timestamp'] = $option['timeStamp'];
@@ -123,7 +123,7 @@ class BasicWePay
         $data = [
             'appid'     => $this->config['appid'],
             'partnerid' => $this->config['mch_id'],
-            'prepayid'  => (string)$prepayId,
+            'prepayid'  => (string)$prepayId[0],
             'package'   => 'Sign=WXPay',
             'timestamp' => (string)time(),
             'noncestr'  => $this->createNoncestr(),
@@ -143,7 +143,7 @@ class BasicWePay
             'mch_id'     => $this->config['mch_id'],
             'time_stamp' => (string)time(),
             'nonce_str'  => $this->createNoncestr(),
-            'product_id' => (string)$productId,
+            'product_id' => (string)$productId[0],
         ];
         $data['sign'] = $this->getPaySign($data, 'MD5');
         return "weixin://wxpay/bizpayurl?" . http_build_query($data);

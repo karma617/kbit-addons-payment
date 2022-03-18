@@ -1,7 +1,6 @@
 
-CREATE TABLE `payment_log` (
-  `payment_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `app_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '站点id',
+CREATE TABLE `one_one_pay_log` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `uid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '用户标识',
   `type` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '1付款，2退款',
   `product_id` varchar(50) DEFAULT '' COMMENT '产品ID[选填]',

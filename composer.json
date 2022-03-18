@@ -6,11 +6,7 @@
     "autoload": {
         "psr-4": {
             "kbitAddons\\payment\\": "src/"
-        },
-        "files": [
-            "src/config.php",
-            "src/route.php"
-        ]
+        }
     },
     "authors": [
         {
