@@ -1,0 +1,24 @@
+{
+    "name": "kbit/addons-payment",
+    "description": "微信、支付宝支付工厂",
+    "type": "kbit-addons",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "kbitAddons\\payment\\": "src/"
+        },
+        "files": [
+            "src/config.php",
+            "src/route.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "karma617",
+            "email": "723875993@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0"
+    }
+}
